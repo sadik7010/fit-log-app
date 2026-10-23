@@ -1,5 +1,6 @@
 import React from "react";
 import WorkoutCard from "./WorkoutCard";
+import WorkoutSearch from "./WorkoutSearch";
 
 const AllWorkout = async () => {
   const res = await fetch("https://api.abcz.workers.dev/api/fitlog");
@@ -16,6 +17,7 @@ const AllWorkout = async () => {
             Twelve lifts covering every major muscle group.
           </p>
         </div>
+        <WorkoutSearch data={data} />
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 px-4 sm:px-6 lg:px-0">
           {data.map((allWorkouts) => (
