@@ -16,8 +16,9 @@ const AllWorkout = async () => {
           <p className="text-gray-400 text-sm sm:text-base mt-1 sm:mt-2 mb-6 sm:mb-8 md:mb-10">
             Twelve lifts covering every major muscle group.
           </p>
+          <WorkoutSearch data={data} />
         </div>
-        <WorkoutSearch data={data} />
+        
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 px-4 sm:px-6 lg:px-0">
           {data.map((allWorkouts) => (
