@@ -4,7 +4,7 @@ FitLog is a modern and responsive workout library application built with **Next.
 
 ## 🔗 Live Demo
 
-**Live Site:** Add your deployed website link here
+**Live Site:https://fit-log-app-lac.vercel.app
 
 ## 📖 About the Project
 
