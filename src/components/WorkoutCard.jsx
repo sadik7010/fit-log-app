@@ -14,68 +14,71 @@ const WorkoutCard = ({ allWorkouts }) => {
   } = allWorkouts;
 
   return (
-    <Link href={`/workouts/${allWorkouts.id}`}>
-    <div className="overflow-hidden rounded-2xl border border-gray-800 bg-[#15171c]">
-      
-      {/* Image */}
-      <div className="relative h-52 w-full sm:h-56">
-        <Image
-          src={image}
-          alt={name}
-          fill
-          className="object-cover"
-        />
-      </div>
-
-      {/* Content */}
-      <div className="p-5">
-
-        {/* Muscle Groups */}
-        <div className="mb-5 flex flex-wrap gap-2">
-          {muscleGroups.map((muscle) => (
-            <span
-              key={muscle}
-              className="rounded-full bg-lime-400 px-3 py-1 text-xs font-bold uppercase text-black"
-            >
-              {muscle}
-            </span>
-          ))}
+    <Link
+      href={`/workouts/${allWorkouts.id}`}
+      className="block h-full"
+    >
+      <div className="h-full overflow-hidden rounded-xl sm:rounded-2xl border border-gray-800 bg-[#15171c]">
+        
+        {/* Image */}
+        <div className="relative h-44 w-full sm:h-52 md:h-56 lg:h-52 xl:h-56">
+          <Image
+            src={image}
+            alt={name}
+            fill
+            className="object-cover"
+          />
         </div>
 
-        {/* Name */}
-        <h2 className="text-xl font-black uppercase text-white">
-          {name}
-        </h2>
+        {/* Content */}
+        <div className="p-4 sm:p-5">
 
-        {/* Equipment */}
-        <p className="mt-1 text-sm text-gray-400">
-          {equipment}
-        </p>
-
-        {/* Divider */}
-        <div className="my-5 border-t border-gray-800" />
-
-        {/* Bottom Info */}
-        <div className="flex flex-wrap items-center gap-5 text-sm text-gray-400">
-
-          <div className="flex items-center gap-2">
-            <Clock size={17} />
-            <span>{duration} min</span>
+          {/* Muscle Groups */}
+          <div className="mb-3 sm:mb-5 flex flex-wrap gap-1.5 sm:gap-2">
+            {muscleGroups.map((muscle) => (
+              <span
+                key={muscle}
+                className="rounded-full bg-lime-400 px-2.5 sm:px-3 py-1 text-[10px] sm:text-xs font-bold uppercase text-black"
+              >
+                {muscle}
+              </span>
+            ))}
           </div>
 
-          <div className="flex items-center gap-2">
-            <Flame size={17} />
-            <span>{caloriesBurned} kcal</span>
-          </div>
+          {/* Name */}
+          <h2 className="text-lg sm:text-xl font-black uppercase text-white">
+            {name}
+          </h2>
 
-          <div className="flex items-center gap-2">
-            <Star size={17} />
-            <span>{rating}</span>
-          </div>
+          {/* Equipment */}
+          <p className="mt-1 text-xs sm:text-sm text-gray-400">
+            {equipment}
+          </p>
 
+          {/* Divider */}
+          <div className="my-4 sm:my-5 border-t border-gray-800" />
+
+          {/* Bottom Info */}
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-5 text-xs sm:text-sm text-gray-400">
+
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <Clock className="h-4 w-4 sm:h-[17px] sm:w-[17px]" />
+              <span>{duration} min</span>
+            </div>
+
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <Flame className="h-4 w-4 sm:h-[17px] sm:w-[17px]" />
+              <span>{caloriesBurned} kcal</span>
+            </div>
+
+            <div className="flex items-center gap-1.5 sm:gap-2">
+              <Star className="h-4 w-4 sm:h-[17px] sm:w-[17px]" />
+              <span>{rating}</span>
+            </div>
+
+          </div>
         </div>
       </div>
-    </div>
     </Link>
   );
 };
