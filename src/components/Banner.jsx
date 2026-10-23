@@ -56,7 +56,7 @@ const Banner = () => {
             </p>
 
             <Link
-              href="/workouts"
+              href="/"
               className="
                 btn mt-8
                 border-none
