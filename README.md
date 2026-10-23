@@ -45,6 +45,8 @@ The My Plan page automatically calculates and displays:
 - Total Workout Minutes
 - Total Calories
 
+ ### 6.Workout Search** – Search workouts by workout name or muscle group/tag.
+
 ## ⭐ Additional Features
 
 - Sort workouts by Duration, Calories, or Rating
