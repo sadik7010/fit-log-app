@@ -36,6 +36,7 @@ const PlanCard = ({ item, activeTab }) => {
   return (
     <div
       className="
+      
         flex flex-col gap-5
         rounded-2xl
         border border-gray-800

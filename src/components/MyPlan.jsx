@@ -45,7 +45,7 @@ const MyPlan = () => {
       );
     }
     return (
-      <div>
+      <div className="flex flex-col gap-4">
         {sortedList.map((item) => (
           <PlanCard key={item.id} item={item} activeTab={activeTab} />
         ))}
@@ -86,63 +86,54 @@ const MyPlan = () => {
       {/* Tab */}
 
       {/* name of each tab group should be unique */}
-      
-<div className="flex flex-col gap-8 bg-[#0f1014] text-white">
 
-  {/* Tabs + Sort By */}
-  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+      <div className="flex flex-col gap-8 bg-[#0f1014] text-white">
+        {/* Tabs + Sort By */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          {/* Tabs */}
+          <div className="flex w-fit items-center gap-1 rounded-2xl border border-[#272a35] bg-[#14151b] p-1.5">
+            <button
+              onClick={() => setActiveTab("plan")}
+              className={`rounded-xl px-5 py-3 text-sm font-medium transition-all duration-200 ${
+                activeTab === "plan"
+                  ? "bg-[#20232c] text-white"
+                  : "text-gray-400 hover:text-white"
+              }`}
+            >
+              Today’s Plan
+            </button>
 
-    {/* Tabs */}
-    <div className="flex w-fit items-center gap-1 rounded-2xl border border-[#272a35] bg-[#14151b] p-1.5">
+            <button
+              onClick={() => setActiveTab("saved")}
+              className={`rounded-xl px-5 py-3 text-sm font-semibold transition-all duration-200 ${
+                activeTab === "saved"
+                  ? "bg-[#20232c] text-white"
+                  : "text-gray-400 hover:text-white"
+              }`}
+            >
+              Saved
+            </button>
+          </div>
 
-      <button
-        onClick={() => setActiveTab("plan")}
-        className={`rounded-xl px-5 py-3 text-sm font-medium transition-all duration-200 ${
-          activeTab === "plan"
-            ? "bg-[#20232c] text-white"
-            : "text-gray-400 hover:text-white"
-        }`}
-      >
-        Today’s Plan
-      </button>
+          {/* Sort By */}
+          <div className="flex items-center gap-4">
+            <p className="whitespace-nowrap text-sm text-gray-400">Sort By</p>
 
-      <button
-        onClick={() => setActiveTab("saved")}
-        className={`rounded-xl px-5 py-3 text-sm font-semibold transition-all duration-200 ${
-          activeTab === "saved"
-            ? "bg-[#20232c] text-white"
-            : "text-gray-400 hover:text-white"
-        }`}
-      >
-        Saved
-      </button>
-    </div>
+            <select
+              onChange={(e) => setSortBy(e.target.value)}
+              value={sortBy}
+              className="select h-12 min-h-0 w-36 rounded-xl border border-[#272a35] bg-[#14151b] text-white outline-none focus:border-gray-500"
+            >
+              <option value="duration">Duration</option>
+              <option value="calories">Calories</option>
+              <option value="rating">Rating</option>
+            </select>
+          </div>
+        </div>
 
-    {/* Sort By */}
-    <div className="flex items-center gap-4">
-      <p className="whitespace-nowrap text-sm text-gray-400">
-        Sort By
-      </p>
-
-      <select
-        onChange={(e) => setSortBy(e.target.value)}
-        value={sortBy}
-        className="select h-12 min-h-0 w-36 rounded-xl border border-[#272a35] bg-[#14151b] text-white outline-none focus:border-gray-500"
-      >
-        <option value="duration">Duration</option>
-        <option value="calories">Calories</option>
-        <option value="rating">Rating</option>
-      </select>
-    </div>
-  </div>
-
-  {/* Tab Content */}
-  <div>
-    {renderTabContent()}
-  </div>
-
-</div>
-
+        {/* Tab Content */}
+        <div>{renderTabContent()}</div>
+      </div>
     </div>
   );
 };
